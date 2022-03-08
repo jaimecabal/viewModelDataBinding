@@ -93,7 +93,21 @@
                 android:layout_marginTop="@dimen/side_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
-                tools:text="Subtotal $5.00" />
+                tools:text="Subtotal $5.00"
+                />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:onClick="@{() -> flavorFragment.cancelOrder()}"
+                android:layout_marginEnd="@dimen/side_margin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button"
+                style="?attr/materialButtonOutlinedStyle"
+                />
 
             <Button
                 android:id="@+id/next_button"
@@ -105,7 +119,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+                app:layout_constraintTop_toBottomOf="@id/subtotal"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
